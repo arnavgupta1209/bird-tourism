@@ -1,0 +1,65 @@
+Clustering details:
+Problems:
+    High density Areas like kerela and low density like Chattisgarh, Madhya Pradesh
+    Time taken
+
+    Non-parametric vs parametric (shouldnt depend on n_clusters)
+
+        Meanshift, DBSCAN, HDBSCAN, OPTICS, Gaussian Mixtures(Bayenesian)(takes max_clusters)
+    
+    Inductive vs Transductive (Can work on some samples at a time)(n_samples)
+    
+    18-5-24
+    Single vs ensemble
+        Tries to solve density problem
+        
+        tried to use mean shift twice, border areas(of first clusters) were issues
+
+        tried to seperate out the states, border areas(goa and maharashtra) were issues
+
+        trying to find a way to isolate high density areas and cluster them seperately
+
+        19-5-24
+        Maybe do HDBSCAN then k-nearest(supervised on prev labels)
+
+        Gaussian got andaman and nicobar right but has very uneven clusters also slow
+
+
+21-05-24
+3RD ROUND
+CLUSTER SIKKIM AND HIMLAYAS AGAIN
+
+
+26-05-24
+TBD:
+    BIRD ADDRESS (least priority rn)(very hectic)
+
+    DISTANCE FILTER (essentially done)
+
+    MULTI LOCAL (Would require big changes in analysis): have examples to help decide first:
+        27-05-2024
+        Aight we try it out on the top 100 people, I can give a score of how similar 2 clusters are in terms of count, so making two local clusters is easy enough
+        This does not capture temporal changes, it does not capture anything apart from just count.
+
+    GRAPH THEORY: (incorporating temporal) 
+        Maybe have a before and after in each checklist, citing where the person was before it, and where they were after it.
+        Store a list for each observer, a sequence of numbers according to the clusters theyve been in. find most common sub seq.
+        Construct a personal graph for each observer based on seq.
+        Wilder: Construct a markov chain for each observer (Should capture birder behaviour quite well, but not temporal issues like house change).
+        27-05-2024
+        GRAPHS HAVE BEEN MADE AND STORED.
+
+    27-05-2024
+    Defining tourism via graphs:
+    connectivity + self birding
+    Honestly, idk
+    new prevailing theory, sliding window, see whats most popular in that window, window size?, maybe adaptive?
+
+    28-05-2024
+    Sliding window implemented, no major difference, but some graphs look more sensible
+
+    30-05-2024
+    Simulated a so called markov process
+
+    31-05-2024
+    Tried to open the tif files
